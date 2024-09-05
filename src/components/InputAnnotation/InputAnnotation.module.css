@@ -1,0 +1,21 @@
+.annotation {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    position: absolute;
+    top: 100%;
+    left: 2px;
+    color: #51525C;
+}
+.leftLabel{
+    width: 64px;
+}
+.darkmode{
+    color: #A0A0AB;
+}
+
+.error{
+    color: #D92D20;
+}

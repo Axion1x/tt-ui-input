@@ -1,0 +1,23 @@
+.groupContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .groupContainer.leftLabel {
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .leftLabel {
+    margin-right: 10px;
+  }
+  
+  .inputWrapper {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    position: relative;
+  }
+  
