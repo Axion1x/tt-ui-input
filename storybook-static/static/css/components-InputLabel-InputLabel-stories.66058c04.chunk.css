@@ -1,4 +1,4 @@
-.label {
+.InputLabel_label__oWHMp {
     margin-bottom: 4px;
     display: flex;
     align-items: center;
@@ -10,19 +10,19 @@
     text-align: left;
 
 }
-.disabled{
+.InputLabel_disabled__--uD9{
     color: #70707B !important;
 }
 
-.sm {
+.InputLabel_sm__UGECA {
     font-family: Inter;
-    font-size: 3000px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 20px;
     text-align: left;
 }
 
-.helpIconContainer {
+.InputLabel_helpIconContainer__ymdNQ {
     position: relative;
     margin-left: 4px;
     display: flex;
@@ -30,13 +30,13 @@
     cursor: pointer;
 }
 
-.Icon {
+.InputLabel_Icon__4FUdb {
     display: block;
     width: 12px;
     height: 12px;
 }
 
-.popupMessage {
+.InputLabel_popupMessage__mDU4x {
     position: absolute;
     bottom: 25px;
     left: 50%;
@@ -52,13 +52,13 @@
     text-align: center;
 }
 
-.popupMessage.show {
+.InputLabel_popupMessage__mDU4x.InputLabel_show__Tflmt {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) scaleY(1);
 }
 
-.popupMessage::before {
+.InputLabel_popupMessage__mDU4x::before {
     content: '';
     position: absolute;
     bottom: -15px;
@@ -69,14 +69,14 @@
     border-color: #616161 transparent transparent transparent;
 }
 
-.asterisk {
+.InputLabel_asterisk__WMASO {
     margin-left: 2px;
     font-size: 18px;
     color: #D92D20;
     cursor: pointer;
 }
 
-.asteriskContainer {
+.InputLabel_asteriskContainer__\+NzJq {
     position: relative;
     margin-left: 4px;
     display: flex;
@@ -84,14 +84,16 @@
     cursor: pointer;
 }
 
-.darkmode{
+.InputLabel_darkmode__4JmPK{
     color: #FAFAFA;
 }
-.darkmodePopup{
+.InputLabel_darkmodePopup__c\+g5l{
     background: #fff;
     color:#333;
 
 }
-.darkmodePopup::before{
+.InputLabel_darkmodePopup__c\+g5l::before{
     border-color: #fff transparent transparent transparent;
 }
+
+/*# sourceMappingURL=components-InputLabel-InputLabel-stories.66058c04.chunk.css.map*/
