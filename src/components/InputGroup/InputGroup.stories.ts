@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import InputGroup from "../components/InputGroup/InputGroup";
+import InputGroup from "./InputGroup";
 
 const meta: Meta<typeof InputGroup> = {
     title: "Components/InputGroup",

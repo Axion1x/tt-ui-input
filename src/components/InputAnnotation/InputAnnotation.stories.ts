@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import InputAnnotation from "../components/InputAnnotation/InputAnnotation";
+import InputAnnotation from "./InputAnnotation";
 
 const meta: Meta<typeof InputAnnotation> = {
   title: "Components/Annotation",
