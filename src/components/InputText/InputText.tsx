@@ -16,6 +16,10 @@ export interface InputTextConfig {
   alignment?: "right" | "left";
   darkmode?: boolean;
   state?: "default" | "hover" | "focus" | "error" | "disabled" | "error-focus";
+  type?: 'text' | 'number' | 'email' | "password";
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
 const InputText: React.FC<InputTextConfig> = ({
@@ -29,28 +33,27 @@ const InputText: React.FC<InputTextConfig> = ({
   alignment = "left",
   darkmode = false,
   state = "default",
+  type = 'text',
+  onBlur,
+  onChange,
+  onSubmit
 }) => {
-  if (labelPosition === "left" && (isIconBefore || isIconAfter || isShortKey)) {
-    throw new Error("Not enough space! Left position - 64px width on input");
-  }
-
   const inputRef = useRef<HTMLInputElement>(null);
-
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); 
+    if (onSubmit) {
+      onSubmit(event);
+    }
+  };
+  
   return (
-    <div
-      // className={`${style.inputContainer}
-      //   ${labelPosition === "left" ? style.leftPosititon : ""}
-      //   ${style[inputSize]}
-      //   ${border? '' : style.nonBorder}
-      //   ${darkmode ? style.darkmode : ""}
-      //   ${state === 'error' ? style.error : ""}
-      //   ${style[state]}
-      // `}
+    <form
+      onSubmit={handleSubmit}
       className={classNames(
         style.inputContainer,
         {
-          [style.leftPosititon]: labelPosition === "left",
-          [style.nonBorder]: !border,
+          [style.leftPosititonContainer]: labelPosition === "left",
+          [style.border]: border,
           [style.darkmode]: darkmode,
           [style.error]: state === "error",
         },
@@ -73,12 +76,16 @@ const InputText: React.FC<InputTextConfig> = ({
       <input
         ref={inputRef}
         className={`
+          ${labelPosition === 'left' ? style.leftPosititon : ''}
           ${style.input} 
           ${style[alignment]}
-          ${placeholder}`}
-        type="text"
+          ${placeholder}
+          ${state === "disabled" ? style.disabled : ''}`}
+        type={type}
         placeholder={placeholder}
         disabled={state === "disabled"}
+        onBlur={onBlur}
+        onChange={onChange}
       />
       {isShortKey ? (
         <HelpIcon
@@ -90,8 +97,9 @@ const InputText: React.FC<InputTextConfig> = ({
         ""
       )}
       {isIconAfter ? <ShortKey className={`${style.shortkey}`} /> : ""}
-    </div>
+    </form>
   );
 };
+
 
 export default InputText;
