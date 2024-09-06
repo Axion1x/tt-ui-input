@@ -10,6 +10,9 @@
     text-align: left;
 
 }
+.disabled{
+    color: #70707B !important;
+}
 
 .sm {
     font-family: Inter;
@@ -39,7 +42,7 @@
     left: 50%;
     min-width: 100px;
     transform: translateX(-50%) scaleX(0);
-    background: #333;
+    background: #616161;
     color: #fff;
     padding: 8px;
     border-radius: 4px;
@@ -63,7 +66,7 @@
     transform: translateX(-50%);
     border-width: 8px;
     border-style: solid;
-    border-color: #333 transparent transparent transparent;
+    border-color: #616161 transparent transparent transparent;
 }
 
 .asterisk {
@@ -83,4 +86,12 @@
 
 .darkmode{
     color: #FAFAFA;
+}
+.darkmodePopup{
+    background: #fff;
+    color:#333;
+
+}
+.darkmodePopup::before{
+    border-color: #fff transparent transparent transparent;
 }

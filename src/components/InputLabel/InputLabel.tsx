@@ -7,10 +7,9 @@ export interface InputLabelConfig {
   isMarked?: boolean;
   labelText?: string;
   tooltip?: string;
-  isSearch?: boolean;
   labelSize?: "sm" | "md";
   darkmode?: boolean;
-  state?: 'default' | 'hover' | 'focus' | 'error' | 'disabled' | 'error-focus';
+  state?: "default" | "hover" | "focus" | "error" | "disabled" | "error-focus";
 }
 
 const InputLabel: FC<InputLabelConfig> = ({
@@ -20,16 +19,20 @@ const InputLabel: FC<InputLabelConfig> = ({
   tooltip,
   labelSize = "md",
   darkmode = false,
-  state = 'default',
+  state = "default",
 }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [showPopupAsterisk, setShowPopupAsterisk] = useState(false);
-
+  if(state === 'disabled'){
+    tooltip = '';
+    isMarked = true;
+    isRequired = false;
+  }
   return (
     <div
       className={`${darkmode ? style.darkmode : ""} ${style.label} ${
         labelSize === "md" ? "" : style.sm
-      }`}
+      } ${style[state]}`}
     >
       {labelText}
       {isMarked ? (
@@ -43,7 +46,7 @@ const InputLabel: FC<InputLabelConfig> = ({
             <div
               className={`${style.popupMessage} ${
                 showPopupAsterisk ? style.show : ""
-              }`}
+              } ${darkmode ? style.darkmodePopup : ""}`}
             >
               Required
             </div>
@@ -64,7 +67,7 @@ const InputLabel: FC<InputLabelConfig> = ({
         >
           <Icon className={style.Icon} />
           <div
-            className={`${style.popupMessage} ${showPopup ? style.show : ""}`}
+            className={`${style.popupMessage} ${showPopup ? style.show : ""} ${darkmode ? style.darkmodePopup : ""}`}
           >
             {tooltip}
           </div>

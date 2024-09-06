@@ -13,11 +13,20 @@ function App() {
         isIconBefore={true}
         isIconAfter={true}
         isShortKey={true}
-        labelPosition={'top'}
-        inputSize={"xl"}
-        placeholder="Input email..."
-        state="default"
+        alignment="left"
+        border={true}
+        labelPosition={"top"}
+        inputSize={"md"}
+        placeholder={"Input email..."}
+        state={"default"}
         annotationText={"Some text"}
+        labelText= {'New Label'}
+        onBlur={(event) => console.log("Blur event:", event)}
+        onChange={(event) => console.log("Change event:", event.target.value)}
+        onSubmit={(event) => {
+        event.preventDefault();
+        console.log("Form submitted");
+        }}
       />
     </div>
   );
